@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Voter Registration</title>
+<style>
+body {
+	font-family: Arial;
+	background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+}
+
+.container {
+	max-width: 400px;
+	margin: 50px auto;
+	background: #fff;
+	padding: 30px;
+	border-radius: 10px;
+}
+
+h2 {
+	text-align: center;
+	color: #d64203;
+}
+
+input {
+	width: 100%;
+	padding: 10px;
+	margin: 8px 0;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+button {
+	width: 100%;
+	padding: 12px;
+	background: #d64203;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button:hover {
+	background: #b83400;
+}
+.header {
+      text-align: center;
+      background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+      padding: 15px;
+      border-bottom: 2px solid #ccc;
+    }
+    .header p {
+	font-size: 22px;
+	font-weight: bold;
+	color: #d64203;
+	margin: 0;
+	line-height: 1.4;
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+	<header class="header">
+		<p>
+			मतदाता सेवा पोर्टल<br>
+			<b>Voters' Service Portal</b>
+		</p>
+	</header>
+
+	<div class="container">
+		<h2>Voter Registration</h2>
+		<form method="post" action="Registration">
+
+			<label for="name">Full Name</label> <input type="text" id="name"
+				name="fname" placeholder="Enter your full name" required> <label
+				for="email">Email ID</label> <input type="email" id="email"
+				name="email" placeholder="Enter your email" required> <label
+				for="password">Password</label> <input type="password" id="password"
+				name="password" placeholder="Enter password" required> <label
+				for="cpassword">Confirm Password</label> <input type="password"
+				id="cpassword" name="cpassword" placeholder="Confirm password"
+				required> <label for="cardno">Voter Card Number</label> <input
+				type="text" id="cardno" name="cardno"
+				placeholder="Enter your Voter ID" required> <label for="pin">PIN</label>
+			<input type="text" id="pin" name="pin"
+				placeholder="Enter a 4-digit PIN" required min="1000" max="9999">
+
+			<button type="submit">Register</button>
+		</form>
+	</div>
+
+</body>
+</html>

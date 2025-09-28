@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vote Here</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- JS for Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Rubik', sans-serif;
+  background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header (same as other pages) */
+.header {
+  text-align: center;
+  background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+  padding: 15px;
+  border-bottom: 2px solid #ccc;
+}
+.header p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #d64203;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+}
+.left-section {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 40px;
+  width: 450px;
+  background: #fff;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  animation: slideIn 1s ease;
+}
+.right-section {
+  flex: 1;
+  background: url("voting_banner.jpg") no-repeat center center;
+  background-size: cover;
+}
+.left-section h1 {
+  margin: 0;
+  color: #f50629;
+  font-size: 32px;
+}
+.left-section h4 {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.form {
+  margin-top: 25px;
+}
+.form-group label {
+  font-weight: bold;
+  color: #138808;
+}
+.form-control {
+  height: 45px;
+  border-radius: 6px;
+  border: 2px solid #ddd;
+  transition: 0.3s;
+}
+.form-control:focus {
+  border-color: #0f7ef1;
+  box-shadow: none;
+}
+button {
+  padding: 12px;
+  border: none;
+  background: linear-gradient(to right, #f50629, #fd9d08);
+  border-radius: 6px;
+  margin-top: 15px;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  width: 100%;
+  transition: 0.3s;
+}
+button:hover {
+  background: linear-gradient(to right, #b80020, #e68500);
+}
+@keyframes slideIn {
+  from {opacity: 0; transform: translateX(-60px);}
+  to {opacity: 1; transform: translateX(0);}
+}
+</style>
+</head>
+<body>
+
+<!-- Common Header -->
+<header class="header">
+  <p>मतदाता सेवा पोर्टल<br><b>Voters' Service Portal</b></p>
+</header>
+
+<div class="container">
+  <div class="left-section">
+    <div class="header-text">
+      <h1>🗳 Cast Your Vote</h1>
+      <h4>"Choose the right leader for the nation"</h4>
+    </div>
+    
+    <form action="Vote" method="post" class="form">
+    
+      <div class="form-group">
+        <label for="cardno">Voter Card Number</label>
+        <input type="number" id="cardno" name="cardno" class="form-control" placeholder="Enter your Voter ID" required>
+      </div>
+
+      <div class="form-group">
+        <label for="party">Select Party</label>
+        <select id="party" name="party" class="form-control" required>
+          <option disabled selected value="">-- Please select --</option>
+          <option>Bharat Rashtra Samithi (BRS)</option>
+          <option>YSRCP (YCP)</option>
+          <option>Bahujan Samaj Party (BSP)</option>
+          <option>Bharatiya Janata Party (BJP)</option>
+          <option>Communist Party of India</option>
+          <option>Communist Party of India (Marxist)</option>
+          <option>Indian National Congress</option>
+          <option>All India Trinamool Congress</option>
+          <option>Aam Aadmi Party (AAP)</option>
+          <option>None of the Above</option>
+        </select>
+      </div>
+
+      <button type="submit">Submit Vote</button>
+    </form>
+  </div>
+
+  <div class="right-section"></div>
+</div>
+
+</body>
+</html>

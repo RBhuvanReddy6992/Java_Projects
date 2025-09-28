@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - Voter Registration</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      text-align: center;
+      background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+      padding: 15px;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .header p {
+      font-size: 22px;
+      font-weight: bold;
+      color: #d64203;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .thank-container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      width: 500px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .thank-container h1 {
+      color: #138808;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .thank-container p {
+      font-size: 18px;
+      color: #444;
+      margin: 10px 0;
+    }
+
+    .countdown {
+      color: #d64203;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .thank-container a {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 25px;
+      background: #d64203;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+  </style>
+  
+  <script>
+    let seconds = 3;
+    function startCountdown() {
+        const countdownElement = document.getElementById('countdown');
+        const interval = setInterval(function() {
+            seconds--;
+            countdownElement.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(interval);
+                window.location.href = 'Login.html';
+            }
+        }, 1000);
+    }
+    window.onload = startCountdown;
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <p>मतदाता सेवा पोर्टल<br><b>Voters' Service Portal</b></p>
+  </header>
+
+  <div class="thank-container">
+    <h1>Thank You for Registering!</h1>
+    <p>Your voter registration has been successfully submitted.</p>
+    <p>Redirecting to login page in <span class="countdown" id="countdown">3</span> seconds...</p>
+    <a href="Login.html">Go to Login Now</a>
+  </div>
+
+</body>
+</html>
